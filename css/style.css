@@ -591,3 +591,11 @@ img { display: block; max-width: 100%; }
 .note-dw__list small { font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-2); text-align: right; }
 .note-dw__go { width: 100%; margin-top: 30px; justify-content: center; }
 @media (max-width: 600px) { .note-dw { padding: 54px 20px 32px; } }
+
+/* iPhone: главный экран заходит под статус-бар и нижнюю панель Safari — без белых полос */
+html:has(body[data-page="home"]) { background: #0d0805; }
+.hero { height: 100vh; height: 100lvh; }
+/* текст и кнопку держим в видимой части экрана, над панелью браузера */
+.hero__center { bottom: calc(100lvh - 100svh); }
+.hero__scroll { bottom: calc(34px + 100lvh - 100svh + env(safe-area-inset-bottom, 0px)); }
+.header { padding-top: env(safe-area-inset-top, 0px); height: calc(var(--header-h) + env(safe-area-inset-top, 0px)); }
